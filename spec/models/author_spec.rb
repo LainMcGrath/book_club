@@ -5,6 +5,7 @@ RSpec.describe Author, type: :model do
     it {should have_many :author_books}
   end
 end
+<<<<<<< HEAD
 
 describe 'average number of pages' do
   it "can calculate averge number of pages in all books" do
@@ -22,3 +23,5 @@ describe 'average number of pages' do
     expect(author_1.avg_number_pages).to eq(488)
   end
 end
+=======
+>>>>>>> ea5a38756f8d72243c5514b67a71499109ddcd82
