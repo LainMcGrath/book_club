@@ -32,11 +32,14 @@ RSpec.describe "User can see all books", type: :feature do
 
     books_array.each do |book|
       within "#book-#{book.id}" do
-        expect(page).to have_content(book.title)
+        expect(page).to have_link(book.title)
         expect(page).to have_content(book.pages)
         expect(page).to have_content(book.publication_year)
         expect(page).to have_content(book.authors.name)
       end
     end
+
+    click_on("#{book_1.title}")
+    expect(page).to have_current_path("/books/#{book_1.id}")
   end
 end
